@@ -23,6 +23,8 @@
             --glow-b:    rgba(247, 147, 79, 0.15);
             --glow-c:    rgba(111, 221, 139, 0.15);
             --glow-d:    rgba(248, 113, 113, 0.15);
+            --accent-e:  #fc4c02;
+            --glow-e:    rgba(252, 76, 2, 0.15);
         }
 
         html, body {
@@ -136,12 +138,14 @@
         .card-b::before { background: radial-gradient(circle at 50% 0%, var(--glow-b), transparent 70%); }
         .card-c::before { background: radial-gradient(circle at 50% 0%, var(--glow-c), transparent 70%); }
         .card-d::before { background: radial-gradient(circle at 50% 0%, var(--glow-d), transparent 70%); }
+        .card-e::before { background: radial-gradient(circle at 50% 0%, var(--glow-e), transparent 70%); }
 
         .card:hover { transform: translateY(-4px); }
         .card-a:hover { border-color: var(--accent-a); }
         .card-b:hover { border-color: var(--accent-b); }
         .card-c:hover { border-color: var(--accent-c); }
         .card-d:hover { border-color: var(--accent-d); }
+        .card-e:hover { border-color: var(--accent-e); }
         .card:hover::before { opacity: 1; }
 
         .card-icon {
@@ -178,6 +182,7 @@
         .card-b .card-cta { color: var(--accent-b); }
         .card-c .card-cta { color: var(--accent-c); }
         .card-d .card-cta { color: var(--accent-d); }
+        .card-e .card-cta { color: var(--accent-e); }
         .card:hover .card-cta { gap: 0.7rem; }
 
         .card-cta::after { content: '→'; }
@@ -199,6 +204,7 @@
         .card-b .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-b) transparent transparent; }
         .card-c .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-c) transparent transparent; }
         .card-d .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-d) transparent transparent; }
+        .card-e .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-e) transparent transparent; }
 
         /* Coming soon modal */
         .modal-backdrop {
@@ -299,6 +305,7 @@
             .card-b:active { border-color: var(--accent-b); }
             .card-c:active { border-color: var(--accent-c); }
             .card-d:active { border-color: var(--accent-d); }
+            .card-e:active { border-color: var(--accent-e); }
             .card:active::before { opacity: 1; }
             .card:active .card-cta { gap: 0.7rem; }
         }
@@ -353,6 +360,16 @@
                     <div class="card-desc">How many more years of corporate grind do I need</div>
                 </div>
                 <div class="card-cta">Open tracker</div>
+            </a>
+
+            <a href="https://txmnzia.github.io/animated-heatmap" class="card card-e">
+                <div class="card-corner"></div>
+                <div>
+                    <div class="card-icon">👟</div>
+                    <div class="card-title">Strava Heatmap</div>
+                    <div class="card-desc">Animated GPS heatmap of your Strava activities</div>
+                </div>
+                <div class="card-cta">Open app</div>
             </a>
         </div>
     </div>
