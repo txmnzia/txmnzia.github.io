@@ -25,6 +25,8 @@
             --glow-d:    rgba(248, 113, 113, 0.15);
             --accent-e:  #fc4c02;
             --glow-e:    rgba(252, 76, 2, 0.15);
+            --accent-f:  #fbbf24;
+            --glow-f:    rgba(251, 191, 36, 0.15);
         }
 
         html, body {
@@ -139,6 +141,7 @@
         .card-c::before { background: radial-gradient(circle at 50% 0%, var(--glow-c), transparent 70%); }
         .card-d::before { background: radial-gradient(circle at 50% 0%, var(--glow-d), transparent 70%); }
         .card-e::before { background: radial-gradient(circle at 50% 0%, var(--glow-e), transparent 70%); }
+        .card-f::before { background: radial-gradient(circle at 50% 0%, var(--glow-f), transparent 70%); }
 
         .card:hover { transform: translateY(-4px); }
         .card-a:hover { border-color: var(--accent-a); }
@@ -146,6 +149,7 @@
         .card-c:hover { border-color: var(--accent-c); }
         .card-d:hover { border-color: var(--accent-d); }
         .card-e:hover { border-color: var(--accent-e); }
+        .card-f:hover { border-color: var(--accent-f); }
         .card:hover::before { opacity: 1; }
 
         .card-icon {
@@ -183,6 +187,7 @@
         .card-c .card-cta { color: var(--accent-c); }
         .card-d .card-cta { color: var(--accent-d); }
         .card-e .card-cta { color: var(--accent-e); }
+        .card-f .card-cta { color: var(--accent-f); }
         .card:hover .card-cta { gap: 0.7rem; }
 
         .card-cta::after { content: '→'; }
@@ -205,6 +210,7 @@
         .card-c .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-c) transparent transparent; }
         .card-d .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-d) transparent transparent; }
         .card-e .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-e) transparent transparent; }
+        .card-f .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-f) transparent transparent; }
 
         /* Coming soon modal */
         .modal-backdrop {
@@ -306,6 +312,7 @@
             .card-c:active { border-color: var(--accent-c); }
             .card-d:active { border-color: var(--accent-d); }
             .card-e:active { border-color: var(--accent-e); }
+            .card-f:active { border-color: var(--accent-f); }
             .card:active::before { opacity: 1; }
             .card:active .card-cta { gap: 0.7rem; }
         }
@@ -368,6 +375,16 @@
                     <div class="card-icon">👟</div>
                     <div class="card-title">Strava Heatmap</div>
                     <div class="card-desc">Animated GPS heatmap of your Strava activities</div>
+                </div>
+                <div class="card-cta">Open app</div>
+            </a>
+
+            <a href="https://txmnzia.github.io/flavour-pairing" class="card card-f">
+                <div class="card-corner"></div>
+                <div>
+                    <div class="card-icon">🍽️</div>
+                    <div class="card-title">Flavour Pairing</div>
+                    <div class="card-desc">Discover ingredient combinations and complementary flavour pairings</div>
                 </div>
                 <div class="card-cta">Open app</div>
             </a>
