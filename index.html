@@ -10,6 +10,7 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
+            /* shadcn design system tokens (dark) */
             --background: oklch(0.145 0 0);
             --foreground: oklch(0.985 0 0);
             --card: oklch(0.205 0 0);
@@ -21,17 +22,18 @@
             --primary-foreground: oklch(0.984 0.019 200.873);
             --radius: 0.45rem;
 
-            --chart-1: oklch(0.865 0.127 207.078);
-            --chart-2: oklch(0.715 0.143 215.221);
-            --chart-3: oklch(0.609 0.126 221.723);
-            --chart-4: oklch(0.52 0.105 223.128);
-            --chart-5: oklch(0.45 0.085 224.283);
+            /* Per-card accents: same oklch lightness (~0.70) and chroma (~0.14), varied hues */
+            --accent-eki:     oklch(0.71 0.14 215);   /* blue-teal  */
+            --accent-balcony: oklch(0.72 0.14 148);   /* green      */
+            --accent-fire:    oklch(0.68 0.17 22);    /* red-coral  */
+            --accent-strava:  oklch(0.73 0.15 55);    /* orange     */
+            --accent-flavour: oklch(0.68 0.14 290);   /* violet     */
 
-            --glow-1: oklch(0.865 0.127 207.078 / 15%);
-            --glow-2: oklch(0.715 0.143 215.221 / 15%);
-            --glow-3: oklch(0.609 0.126 221.723 / 15%);
-            --glow-4: oklch(0.52 0.105 223.128 / 15%);
-            --glow-5: oklch(0.45 0.085 224.283 / 15%);
+            --glow-eki:     oklch(0.71 0.14 215 / 15%);
+            --glow-balcony: oklch(0.72 0.14 148 / 15%);
+            --glow-fire:    oklch(0.68 0.17 22  / 15%);
+            --glow-strava:  oklch(0.73 0.15 55  / 15%);
+            --glow-flavour: oklch(0.68 0.14 290 / 15%);
         }
 
         html, body {
@@ -134,18 +136,18 @@
             pointer-events: none;
         }
 
-        .card-1::before { background: radial-gradient(circle at 50% 0%, var(--glow-1), transparent 70%); }
-        .card-2::before { background: radial-gradient(circle at 50% 0%, var(--glow-2), transparent 70%); }
-        .card-3::before { background: radial-gradient(circle at 50% 0%, var(--glow-3), transparent 70%); }
-        .card-4::before { background: radial-gradient(circle at 50% 0%, var(--glow-4), transparent 70%); }
-        .card-5::before { background: radial-gradient(circle at 50% 0%, var(--glow-5), transparent 70%); }
+        .card-eki::before     { background: radial-gradient(circle at 50% 0%, var(--glow-eki),     transparent 70%); }
+        .card-balcony::before { background: radial-gradient(circle at 50% 0%, var(--glow-balcony), transparent 70%); }
+        .card-fire::before    { background: radial-gradient(circle at 50% 0%, var(--glow-fire),    transparent 70%); }
+        .card-strava::before  { background: radial-gradient(circle at 50% 0%, var(--glow-strava),  transparent 70%); }
+        .card-flavour::before { background: radial-gradient(circle at 50% 0%, var(--glow-flavour), transparent 70%); }
 
         .card:hover { transform: translateY(-4px); }
-        .card-1:hover { border-color: var(--chart-1); }
-        .card-2:hover { border-color: var(--chart-2); }
-        .card-3:hover { border-color: var(--chart-3); }
-        .card-4:hover { border-color: var(--chart-4); }
-        .card-5:hover { border-color: var(--chart-5); }
+        .card-eki:hover     { border-color: var(--accent-eki); }
+        .card-balcony:hover { border-color: var(--accent-balcony); }
+        .card-fire:hover    { border-color: var(--accent-fire); }
+        .card-strava:hover  { border-color: var(--accent-strava); }
+        .card-flavour:hover { border-color: var(--accent-flavour); }
         .card:hover::before { opacity: 1; }
 
         .card-icon {
@@ -178,11 +180,11 @@
             transition: gap 0.2s;
         }
 
-        .card-1 .card-cta { color: var(--chart-1); }
-        .card-2 .card-cta { color: var(--chart-2); }
-        .card-3 .card-cta { color: var(--chart-3); }
-        .card-4 .card-cta { color: var(--chart-4); }
-        .card-5 .card-cta { color: var(--chart-5); }
+        .card-eki     .card-cta { color: var(--accent-eki); }
+        .card-balcony .card-cta { color: var(--accent-balcony); }
+        .card-fire    .card-cta { color: var(--accent-fire); }
+        .card-strava  .card-cta { color: var(--accent-strava); }
+        .card-flavour .card-cta { color: var(--accent-flavour); }
         .card:hover .card-cta { gap: 0.7rem; }
 
         .card-cta::after { content: '→'; }
@@ -200,11 +202,11 @@
             width: 0; height: 0;
             border-style: solid;
         }
-        .card-1 .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--chart-1) transparent transparent; }
-        .card-2 .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--chart-2) transparent transparent; }
-        .card-3 .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--chart-3) transparent transparent; }
-        .card-4 .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--chart-4) transparent transparent; }
-        .card-5 .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--chart-5) transparent transparent; }
+        .card-eki     .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-eki)     transparent transparent; }
+        .card-balcony .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-balcony) transparent transparent; }
+        .card-fire    .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-fire)    transparent transparent; }
+        .card-strava  .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-strava)  transparent transparent; }
+        .card-flavour .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-flavour) transparent transparent; }
 
         footer {
             font-size: 0.65rem;
@@ -217,6 +219,7 @@
             from { opacity: 0; transform: translateY(16px); }
             to   { opacity: 1; transform: translateY(0); }
         }
+
         @media (max-width: 820px) {
             .cards { flex-direction: column; }
             .card { width: 100%; max-width: 320px; }
@@ -233,11 +236,11 @@
         @media (hover: none) {
             .card { -webkit-tap-highlight-color: transparent; }
             .card:active { transform: translateY(-2px); }
-            .card-1:active { border-color: var(--chart-1); }
-            .card-2:active { border-color: var(--chart-2); }
-            .card-3:active { border-color: var(--chart-3); }
-            .card-4:active { border-color: var(--chart-4); }
-            .card-5:active { border-color: var(--chart-5); }
+            .card-eki:active     { border-color: var(--accent-eki); }
+            .card-balcony:active { border-color: var(--accent-balcony); }
+            .card-fire:active    { border-color: var(--accent-fire); }
+            .card-strava:active  { border-color: var(--accent-strava); }
+            .card-flavour:active { border-color: var(--accent-flavour); }
             .card:active::before { opacity: 1; }
             .card:active .card-cta { gap: 0.7rem; }
         }
@@ -251,7 +254,7 @@
         </header>
 
         <div class="cards">
-            <a href="https://txmnzia.github.io/eki-stamp-tracker/" class="card card-1">
+            <a href="https://txmnzia.github.io/eki-stamp-tracker/" class="card card-eki">
                 <div class="card-corner"></div>
                 <div>
                     <div class="card-icon">🔖</div>
@@ -261,7 +264,7 @@
                 <div class="card-cta">Open map</div>
             </a>
 
-            <a href="https://txmnzia.github.io/balcony-tile-planner/" class="card card-2">
+            <a href="https://txmnzia.github.io/balcony-tile-planner/" class="card card-balcony">
                 <div class="card-corner"></div>
                 <div>
                     <div class="card-icon">🪴</div>
@@ -271,7 +274,7 @@
                 <div class="card-cta">Open map</div>
             </a>
 
-            <a href="https://txmnzia.github.io/fire-planner/" class="card card-3">
+            <a href="https://txmnzia.github.io/fire-planner/" class="card card-fire">
                 <div class="card-corner"></div>
                 <div>
                     <div class="card-icon">🔥</div>
@@ -281,7 +284,7 @@
                 <div class="card-cta">Open tracker</div>
             </a>
 
-            <a href="https://txmnzia.github.io/animated-heatmap" class="card card-4">
+            <a href="https://txmnzia.github.io/animated-heatmap" class="card card-strava">
                 <div class="card-corner"></div>
                 <div>
                     <div class="card-icon">👟</div>
@@ -291,7 +294,7 @@
                 <div class="card-cta">Open app</div>
             </a>
 
-            <a href="https://txmnzia.github.io/flavour-pairing" class="card card-5">
+            <a href="https://txmnzia.github.io/flavour-pairing" class="card card-flavour">
                 <div class="card-corner"></div>
                 <div>
                     <div class="card-icon">🍽️</div>
