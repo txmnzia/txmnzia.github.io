@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Grands Projets</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,11 +24,11 @@
             --radius: 0.45rem;
 
             /* Per-card accents: same oklch lightness (~0.70) and chroma (~0.14), varied hues */
-            --accent-eki:     oklch(0.71 0.14 215);   /* blue-teal  */
-            --accent-balcony: oklch(0.72 0.14 148);   /* green      */
-            --accent-fire:    oklch(0.68 0.17 22);    /* red-coral  */
-            --accent-strava:  oklch(0.73 0.15 55);    /* orange     */
-            --accent-flavour: oklch(0.68 0.14 290);   /* violet     */
+            --accent-eki:     oklch(0.71 0.14 215);
+            --accent-balcony: oklch(0.72 0.14 148);
+            --accent-fire:    oklch(0.68 0.17 22);
+            --accent-strava:  oklch(0.73 0.15 55);
+            --accent-flavour: oklch(0.68 0.14 290);
 
             --glow-eki:     oklch(0.71 0.14 215 / 15%);
             --glow-balcony: oklch(0.72 0.14 148 / 15%);
@@ -40,7 +41,7 @@
             height: 100%;
             background: var(--background);
             color: var(--foreground);
-            font-family: 'Space Mono', monospace;
+            font-family: 'Geist', sans-serif;
             overflow-x: hidden;
         }
 
@@ -84,7 +85,7 @@
         }
 
         .eyebrow {
-            font-family: 'Space Mono', monospace;
+            font-family: 'Geist', sans-serif;
             font-size: 0.7rem;
             letter-spacing: 0.25em;
             text-transform: uppercase;
@@ -93,7 +94,7 @@
         }
 
         h1 {
-            font-family: 'Zen Kaku Gothic New', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-weight: 700;
             font-size: clamp(2rem, 5vw, 3.5rem);
             line-height: 1;
@@ -157,14 +158,14 @@
         }
 
         .card-title {
-            font-family: 'Zen Kaku Gothic New', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 0.4rem;
         }
 
         .card-desc {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--muted-foreground);
             line-height: 1.6;
             margin-bottom: 1.5rem;
