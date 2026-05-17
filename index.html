@@ -29,12 +29,16 @@
             --accent-fire:    oklch(0.68 0.17 22);
             --accent-strava:  oklch(0.73 0.15 55);
             --accent-flavour: oklch(0.68 0.14 290);
+            --accent-coach:   oklch(0.72 0.16 340);
+            --accent-travel:  oklch(0.72 0.14 175);
 
             --glow-eki:     oklch(0.71 0.14 215 / 15%);
             --glow-balcony: oklch(0.72 0.14 148 / 15%);
             --glow-fire:    oklch(0.68 0.17 22  / 15%);
             --glow-strava:  oklch(0.73 0.15 55  / 15%);
             --glow-flavour: oklch(0.68 0.14 290 / 15%);
+            --glow-coach:   oklch(0.72 0.16 340 / 15%);
+            --glow-travel:  oklch(0.72 0.14 175 / 15%);
         }
 
         html, body {
@@ -142,6 +146,8 @@
         .card-fire::before    { background: radial-gradient(circle at 50% 0%, var(--glow-fire),    transparent 70%); }
         .card-strava::before  { background: radial-gradient(circle at 50% 0%, var(--glow-strava),  transparent 70%); }
         .card-flavour::before { background: radial-gradient(circle at 50% 0%, var(--glow-flavour), transparent 70%); }
+        .card-coach::before   { background: radial-gradient(circle at 50% 0%, var(--glow-coach),   transparent 70%); }
+        .card-travel::before  { background: radial-gradient(circle at 50% 0%, var(--glow-travel),  transparent 70%); }
 
         .card:hover { transform: translateY(-4px); }
         .card-eki:hover     { border-color: var(--accent-eki); }
@@ -149,6 +155,8 @@
         .card-fire:hover    { border-color: var(--accent-fire); }
         .card-strava:hover  { border-color: var(--accent-strava); }
         .card-flavour:hover { border-color: var(--accent-flavour); }
+        .card-coach:hover   { border-color: var(--accent-coach); }
+        .card-travel:hover  { border-color: var(--accent-travel); }
         .card:hover::before { opacity: 1; }
 
         .card-icon {
@@ -186,6 +194,8 @@
         .card-fire    .card-cta { color: var(--accent-fire); }
         .card-strava  .card-cta { color: var(--accent-strava); }
         .card-flavour .card-cta { color: var(--accent-flavour); }
+        .card-coach   .card-cta { color: var(--accent-coach); }
+        .card-travel  .card-cta { color: var(--accent-travel); }
         .card:hover .card-cta { gap: 0.7rem; }
 
         .card-cta::after { content: '→'; }
@@ -208,6 +218,8 @@
         .card-fire    .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-fire)    transparent transparent; }
         .card-strava  .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-strava)  transparent transparent; }
         .card-flavour .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-flavour) transparent transparent; }
+        .card-coach   .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-coach)   transparent transparent; }
+        .card-travel  .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-travel)  transparent transparent; }
 
         footer {
             font-size: 0.65rem;
@@ -242,6 +254,8 @@
             .card-fire:active    { border-color: var(--accent-fire); }
             .card-strava:active  { border-color: var(--accent-strava); }
             .card-flavour:active { border-color: var(--accent-flavour); }
+            .card-coach:active   { border-color: var(--accent-coach); }
+            .card-travel:active  { border-color: var(--accent-travel); }
             .card:active::before { opacity: 1; }
             .card:active .card-cta { gap: 0.7rem; }
         }
@@ -303,6 +317,26 @@
                     <div class="card-desc">Discover ingredient combinations and complementary flavour pairings</div>
                 </div>
                 <div class="card-cta">Open app</div>
+            </a>
+
+            <a href="https://txmnzia.github.io/Connected-sport-coach" class="card card-coach">
+                <div class="card-corner"></div>
+                <div>
+                    <div class="card-icon">💪</div>
+                    <div class="card-title">Sport Coach</div>
+                    <div class="card-desc">AI-powered coaching and personalised sport training plans</div>
+                </div>
+                <div class="card-cta">Open app</div>
+            </a>
+
+            <a href="https://txmnzia.github.io/travel-map" class="card card-travel">
+                <div class="card-corner"></div>
+                <div>
+                    <div class="card-icon">🗺️</div>
+                    <div class="card-title">Travel Map</div>
+                    <div class="card-desc">Interactive map of all your travels and destinations</div>
+                </div>
+                <div class="card-cta">Open map</div>
             </a>
         </div>
     </div>
