@@ -106,13 +106,37 @@
             color: var(--foreground);
         }
 
+        .lanes {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 100%;
+            max-width: 800px;
+            animation: fadeUp 0.6s 0.15s ease both;
+        }
+
+        .lane-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted-foreground);
+            margin-bottom: 1rem;
+        }
+
+        .lane-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
         .cards {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 1.5rem;
-            max-width: 800px;
-            animation: fadeUp 0.6s 0.15s ease both;
         }
 
         .card {
@@ -234,6 +258,7 @@
         }
 
         @media (max-width: 820px) {
+            .lanes { max-width: 320px; }
             .cards { flex-direction: column; }
             .card { width: 100%; max-width: 320px; }
         }
@@ -243,6 +268,7 @@
                 padding: 2.5rem 1.25rem 2.5rem;
                 gap: 2rem;
             }
+            .lanes { max-width: 100%; }
             .card { max-width: 100%; }
         }
 
@@ -268,76 +294,94 @@
             <h1>Les Grands Projets</h1>
         </header>
 
-        <div class="cards">
-            <a href="https://txmnzia.github.io/eki-stamp-tracker/" class="card card-eki">
-                <div class="card-corner"></div>
-                <div>
-                    <div class="card-icon">🔖</div>
-                    <div class="card-title">Eki Stamp Map</div>
-                    <div class="card-desc">All of the railway stamps I have collected across Japan</div>
-                </div>
-                <div class="card-cta">Open map</div>
-            </a>
+        <div class="lanes">
 
-            <a href="https://txmnzia.github.io/balcony-tile-planner/" class="card card-balcony">
-                <div class="card-corner"></div>
-                <div>
-                    <div class="card-icon">🪴</div>
-                    <div class="card-title">Balcony Tile Mapping</div>
-                    <div class="card-desc">How many wooden tiles do I need to buy to cover my balcony</div>
+            <section class="lane">
+                <div class="lane-label">Travel</div>
+                <div class="cards">
+                    <a href="https://txmnzia.github.io/eki-stamp-tracker/" class="card card-eki">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">🔖</div>
+                            <div class="card-title">Eki Stamp Map</div>
+                            <div class="card-desc">All of the railway stamps I have collected across Japan</div>
+                        </div>
+                        <div class="card-cta">Open map</div>
+                    </a>
+                    <a href="https://txmnzia.github.io/travel-map" class="card card-travel">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">🗺️</div>
+                            <div class="card-title">Travel Map</div>
+                            <div class="card-desc">Interactive map of all your travels and destinations</div>
+                        </div>
+                        <div class="card-cta">Open map</div>
+                    </a>
                 </div>
-                <div class="card-cta">Open map</div>
-            </a>
+            </section>
 
-            <a href="https://txmnzia.github.io/fire-planner/" class="card card-fire">
-                <div class="card-corner"></div>
-                <div>
-                    <div class="card-icon">🔥</div>
-                    <div class="card-title">FIRE Planning</div>
-                    <div class="card-desc">How many more years of corporate grind do I need</div>
+            <section class="lane">
+                <div class="lane-label">Sport</div>
+                <div class="cards">
+                    <a href="https://txmnzia.github.io/animated-heatmap" class="card card-strava">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">👟</div>
+                            <div class="card-title">Strava Heatmap</div>
+                            <div class="card-desc">Animated GPS heatmap of your Strava activities</div>
+                        </div>
+                        <div class="card-cta">Open app</div>
+                    </a>
+                    <a href="https://txmnzia.github.io/Connected-sport-coach" class="card card-coach">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">💪</div>
+                            <div class="card-title">Sport Coach</div>
+                            <div class="card-desc">AI-powered coaching and personalised sport training plans</div>
+                        </div>
+                        <div class="card-cta">Open app</div>
+                    </a>
                 </div>
-                <div class="card-cta">Open tracker</div>
-            </a>
+            </section>
 
-            <a href="https://txmnzia.github.io/animated-heatmap" class="card card-strava">
-                <div class="card-corner"></div>
-                <div>
-                    <div class="card-icon">👟</div>
-                    <div class="card-title">Strava Heatmap</div>
-                    <div class="card-desc">Animated GPS heatmap of your Strava activities</div>
+            <section class="lane">
+                <div class="lane-label">Finance</div>
+                <div class="cards">
+                    <a href="https://txmnzia.github.io/fire-planner/" class="card card-fire">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">🔥</div>
+                            <div class="card-title">FIRE Planning</div>
+                            <div class="card-desc">How many more years of corporate grind do I need</div>
+                        </div>
+                        <div class="card-cta">Open tracker</div>
+                    </a>
                 </div>
-                <div class="card-cta">Open app</div>
-            </a>
+            </section>
 
-            <a href="https://txmnzia.github.io/flavour-pairing" class="card card-flavour">
-                <div class="card-corner"></div>
-                <div>
-                    <div class="card-icon">🍽️</div>
-                    <div class="card-title">Flavour Pairing</div>
-                    <div class="card-desc">Discover ingredient combinations and complementary flavour pairings</div>
+            <section class="lane">
+                <div class="cards">
+                    <a href="https://txmnzia.github.io/balcony-tile-planner/" class="card card-balcony">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">🪴</div>
+                            <div class="card-title">Balcony Tile Mapping</div>
+                            <div class="card-desc">How many wooden tiles do I need to buy to cover my balcony</div>
+                        </div>
+                        <div class="card-cta">Open map</div>
+                    </a>
+                    <a href="https://txmnzia.github.io/flavour-pairing" class="card card-flavour">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">🍽️</div>
+                            <div class="card-title">Flavour Pairing</div>
+                            <div class="card-desc">Discover ingredient combinations and complementary flavour pairings</div>
+                        </div>
+                        <div class="card-cta">Open app</div>
+                    </a>
                 </div>
-                <div class="card-cta">Open app</div>
-            </a>
+            </section>
 
-            <a href="https://txmnzia.github.io/Connected-sport-coach" class="card card-coach">
-                <div class="card-corner"></div>
-                <div>
-                    <div class="card-icon">💪</div>
-                    <div class="card-title">Sport Coach</div>
-                    <div class="card-desc">AI-powered coaching and personalised sport training plans</div>
-                </div>
-                <div class="card-cta">Open app</div>
-            </a>
-
-            <a href="https://txmnzia.github.io/travel-map" class="card card-travel">
-                <div class="card-corner"></div>
-                <div>
-                    <div class="card-icon">🗺️</div>
-                    <div class="card-title">Travel Map</div>
-                    <div class="card-desc">Interactive map of all your travels and destinations</div>
-                </div>
-                <div class="card-cta">Open map</div>
-            </a>
         </div>
     </div>
 
