@@ -37,6 +37,7 @@
             --accent-flavour: oklch(0.68 0.14 290);
             --accent-coach:   oklch(0.72 0.16 340);
             --accent-travel:  oklch(0.72 0.14 175);
+            --accent-fog:     oklch(0.75 0.13 80);
 
             --glow-eki:     oklch(0.71 0.14 215 / 15%);
             --glow-balcony: oklch(0.72 0.14 148 / 15%);
@@ -45,6 +46,7 @@
             --glow-flavour: oklch(0.68 0.14 290 / 15%);
             --glow-coach:   oklch(0.72 0.16 340 / 15%);
             --glow-travel:  oklch(0.72 0.14 175 / 15%);
+            --glow-fog:     oklch(0.75 0.13 80  / 15%);
         }
 
         html, body {
@@ -178,6 +180,7 @@
         .card-flavour::before { background: radial-gradient(circle at 50% 0%, var(--glow-flavour), transparent 70%); }
         .card-coach::before   { background: radial-gradient(circle at 50% 0%, var(--glow-coach),   transparent 70%); }
         .card-travel::before  { background: radial-gradient(circle at 50% 0%, var(--glow-travel),  transparent 70%); }
+        .card-fog::before     { background: radial-gradient(circle at 50% 0%, var(--glow-fog),     transparent 70%); }
 
         .card:hover { transform: translateY(-4px); }
         .card-eki:hover     { border-color: var(--accent-eki); }
@@ -187,6 +190,7 @@
         .card-flavour:hover { border-color: var(--accent-flavour); }
         .card-coach:hover   { border-color: var(--accent-coach); }
         .card-travel:hover  { border-color: var(--accent-travel); }
+        .card-fog:hover     { border-color: var(--accent-fog); }
         .card:hover::before { opacity: 1; }
 
         .card-icon {
@@ -226,6 +230,7 @@
         .card-flavour .card-cta { color: var(--accent-flavour); }
         .card-coach   .card-cta { color: var(--accent-coach); }
         .card-travel  .card-cta { color: var(--accent-travel); }
+        .card-fog     .card-cta { color: var(--accent-fog); }
         .card:hover .card-cta { gap: 0.7rem; }
 
         .card-cta::after { content: '→'; }
@@ -250,6 +255,7 @@
         .card-flavour .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-flavour) transparent transparent; }
         .card-coach   .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-coach)   transparent transparent; }
         .card-travel  .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-travel)  transparent transparent; }
+        .card-fog     .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-fog)     transparent transparent; }
 
         footer {
             font-size: 0.65rem;
@@ -288,6 +294,7 @@
             .card-flavour:active { border-color: var(--accent-flavour); }
             .card-coach:active   { border-color: var(--accent-coach); }
             .card-travel:active  { border-color: var(--accent-travel); }
+            .card-fog:active     { border-color: var(--accent-fog); }
             .card:active::before { opacity: 1; }
             .card:active .card-cta { gap: 0.7rem; }
         }
@@ -320,6 +327,15 @@
                             <div class="card-icon">🗺️</div>
                             <div class="card-title">Travel Map</div>
                             <div class="card-desc">Interactive map of all your travels and destinations</div>
+                        </div>
+                        <div class="card-cta">Open map</div>
+                    </a>
+                    <a href="https://txmnzia.github.io/FogOfWar/" class="card card-fog">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">🧭</div>
+                            <div class="card-title">Fog of War</div>
+                            <div class="card-desc">An RPG-style world map that clears as you explore, from your Timeline, Strava and pins</div>
                         </div>
                         <div class="card-cta">Open map</div>
                     </a>
