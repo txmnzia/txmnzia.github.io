@@ -1,13 +1,15 @@
 name: Supabase keep-alive
 
-# Free-tier Supabase projects pause after 7 days without database activity,
-# taking every app down. Select from public.heartbeat every 3 days.
+# Free-tier Supabase projects pause without "a few user requests to the
+# database each day over the past week" (Supabase docs), taking every app
+# down. Every-3-days pings were flagged as insufficient (2026-10), so: twice a
+# day, three queries per run.
 # A monthly commit keeps GitHub from disabling this schedule (it does so
 # after 60 days with no repo activity).
 
 on:
   schedule:
-    - cron: "17 6 */3 * *"  # ping
+    - cron: "17 6,18 * * *"  # ping, twice a day
     - cron: "23 7 1 * *"    # heartbeat commit
   workflow_dispatch:
 
@@ -20,10 +22,14 @@ jobs:
     steps:
       # Fails (and emails you) on any non-2xx, e.g. when the project is
       # already paused or the table is missing.
-      - run: >
-          curl -fsS --retry 3 --retry-delay 10
-          "${{ vars.SUPABASE_URL }}/rest/v1/heartbeat?select=id&limit=1"
-          -H "apikey: ${{ vars.SUPABASE_ANON_KEY }}"
+      - run: |
+          for i in 1 2 3; do
+            curl -fsS --retry 3 --retry-delay 10 \
+              "${{ vars.SUPABASE_URL }}/rest/v1/heartbeat?select=id&limit=1" \
+              -H "apikey: ${{ vars.SUPABASE_ANON_KEY }}"
+            echo
+            sleep 20
+          done
 
   heartbeat:
     if: github.event.schedule == '23 7 1 * *'
