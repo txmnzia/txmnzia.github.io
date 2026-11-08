@@ -39,6 +39,7 @@
             --accent-travel:  oklch(0.72 0.14 175);
             --accent-fog:     oklch(0.75 0.13 80);
             --accent-pilz:    oklch(0.72 0.14 253);
+            --accent-pilzmap:    oklch(0.72 0.14 114);
 
             --glow-eki:     oklch(0.71 0.14 215 / 15%);
             --glow-balcony: oklch(0.72 0.14 148 / 15%);
@@ -49,6 +50,7 @@
             --glow-travel:  oklch(0.72 0.14 175 / 15%);
             --glow-fog:     oklch(0.75 0.13 80  / 15%);
             --glow-pilz:   oklch(0.72 0.14 253 / 15%);
+            --glow-pilzmap:   oklch(0.72 0.14 114 / 15%);
         }
 
         html, body {
@@ -184,6 +186,7 @@
         .card-travel::before  { background: radial-gradient(circle at 50% 0%, var(--glow-travel),  transparent 70%); }
         .card-fog::before     { background: radial-gradient(circle at 50% 0%, var(--glow-fog),     transparent 70%); }
         .card-pilz::before     { background: radial-gradient(circle at 50% 0%, var(--glow-pilz),     transparent 70%); }
+        .card-pilzmap::before     { background: radial-gradient(circle at 50% 0%, var(--glow-pilzmap),     transparent 70%); }
 
         .card:hover { transform: translateY(-4px); }
         .card-eki:hover     { border-color: var(--accent-eki); }
@@ -195,6 +198,7 @@
         .card-travel:hover  { border-color: var(--accent-travel); }
         .card-fog:hover     { border-color: var(--accent-fog); }
         .card-pilz:hover     { border-color: var(--accent-pilz); }
+        .card-pilzmap:hover     { border-color: var(--accent-pilzmap); }
         .card:hover::before { opacity: 1; }
 
         .card-icon {
@@ -236,6 +240,7 @@
         .card-travel  .card-cta { color: var(--accent-travel); }
         .card-fog     .card-cta { color: var(--accent-fog); }
         .card-pilz    .card-cta { color: var(--accent-pilz); }
+        .card-pilzmap    .card-cta { color: var(--accent-pilzmap); }
         .card:hover .card-cta { gap: 0.7rem; }
 
         .card-cta::after { content: '→'; }
@@ -262,6 +267,7 @@
         .card-travel  .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-travel)  transparent transparent; }
         .card-fog     .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-fog)     transparent transparent; }
         .card-pilz    .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-pilz)     transparent transparent; }
+        .card-pilzmap    .card-corner::after { border-width: 0 32px 32px 0; border-color: transparent var(--accent-pilzmap)     transparent transparent; }
 
         footer {
             font-size: 0.65rem;
@@ -302,6 +308,7 @@
             .card-travel:active  { border-color: var(--accent-travel); }
             .card-fog:active     { border-color: var(--accent-fog); }
             .card-pilz:active     { border-color: var(--accent-pilz); }
+            .card-pilzmap:active     { border-color: var(--accent-pilzmap); }
             .card:active::before { opacity: 1; }
             .card:active .card-cta { gap: 0.7rem; }
         }
@@ -423,6 +430,15 @@
                             <div class="card-desc">A Pokédex of the mushrooms I find around Berlin and Grenoble</div>
                         </div>
                         <div class="card-cta">Open dex</div>
+                    </a>
+                    <a href="https://txmnzia.github.io/pilzmap/" class="card card-pilzmap">
+                        <div class="card-corner"></div>
+                        <div>
+                            <div class="card-icon">🌲</div>
+                            <div class="card-title">Pilzmap</div>
+                            <div class="card-desc">Where porcini, chanterelles and co. can grow in Berlin and Brandenburg</div>
+                        </div>
+                        <div class="card-cta">Open map</div>
                     </a>
                 </div>
             </section>
